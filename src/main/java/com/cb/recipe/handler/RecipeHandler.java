@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -32,6 +33,11 @@ public class RecipeHandler {
         final String ingredients = Arrays.stream(files)
                 .map(openAiService::processImage)
                 .collect(Collectors.joining(", "));
+
+        if(ingredients.isEmpty()){
+            log.info("No ingredients fetched from file/files");
+            return Collections.emptyList();
+        }
 
         final List<Recipe> recipes = recipeService.getRecipe(ingredients);
 

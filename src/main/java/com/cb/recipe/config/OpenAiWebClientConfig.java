@@ -1,5 +1,6 @@
 package com.cb.recipe.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,12 +14,8 @@ public class OpenAiWebClientConfig {
     @Value("${openai.api.key}")
     private String openaiApiKey;
 
-    /**
-     * Creates a WebClient bean configured with the base URL for the OpenAI API and default headers.
-     *
-     * @return a configured WebClient instance.
-     */
     @Bean
+    @Qualifier("openAiWebClient")
     public WebClient openAiWebClient() {
         return WebClient.builder()
                 .baseUrl("https://api.openai.com/v1")

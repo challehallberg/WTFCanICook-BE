@@ -1,6 +1,6 @@
 package com.cb.recipe.mapper;
 
-import com.cb.recipe.model.Instruction;
+import com.cb.recipe.model.instruction.Instruction;
 import com.cb.recipe.model.spoonacular.instruction.InstructionInner;
 
 import java.util.List;

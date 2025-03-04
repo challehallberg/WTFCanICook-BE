@@ -93,6 +93,36 @@
 			<version>1.7.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.11.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>4.11.0</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- SNAPSHOT -->
+		<dependency>
+			<groupId>io.github.origin-energy</groupId>
+			<artifactId>java-snapshot-testing-junit5</artifactId>
+			<version>4.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.origin-energy</groupId>
+			<artifactId>java-snapshot-testing-core</artifactId>
+			<version>4.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.origin-energy</groupId>
+			<artifactId>java-snapshot-testing-plugin-jackson</artifactId>
+			<version>4.0.8</version>
+		</dependency>
 
 
 	</dependencies>

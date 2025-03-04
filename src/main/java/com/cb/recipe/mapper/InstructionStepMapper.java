@@ -1,10 +1,10 @@
 package com.cb.recipe.mapper;
 
-import com.cb.recipe.model.InstructionStep;
+import com.cb.recipe.model.instruction.InstructionStep;
 import com.cb.recipe.model.spoonacular.instruction.IngredientLeanInner;
 import com.cb.recipe.model.spoonacular.instruction.InstructionStepEnrichedInner;
 import com.cb.recipe.model.spoonacular.instruction.StepLengthInner;
-import com.cb.recipe.model.StepLength;
+import com.cb.recipe.model.instruction.StepLength;
 
 import java.util.Collections;
 import java.util.List;

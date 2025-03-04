@@ -1,0 +1,269 @@
+com.cb.recipe.service.RecipeServiceTest.givenCachedIngredients_whenGetRecipes_thenExpectedCachedRecipes=[
+  [
+    {
+      "id": 985,
+      "title": "Recipe 985",
+      "image": "https://example.com/image985.jpg",
+      "imageType": "jpg",
+      "likes": 88,
+      "missedIngredientCount": 2,
+      "missedIngredients": [
+        {
+          "id": 360,
+          "name": "Ingredient 360",
+          "amount": 8.48296889908355,
+          "unit": "cup",
+          "image": "https://example.com/ingredient360.jpg"
+        },
+        {
+          "id": 985,
+          "name": "Ingredient 985",
+          "amount": 1.9042589469362396,
+          "unit": "g",
+          "image": "https://example.com/ingredient985.jpg"
+        }
+      ],
+      "usedIngredientCount": 3,
+      "usedIngredients": [
+        {
+          "id": 360,
+          "name": "Ingredient 360",
+          "amount": 8.48296889908355,
+          "unit": "cup",
+          "image": "https://example.com/ingredient360.jpg"
+        },
+        {
+          "id": 985,
+          "name": "Ingredient 985",
+          "amount": 1.9042589469362396,
+          "unit": "g",
+          "image": "https://example.com/ingredient985.jpg"
+        },
+        {
+          "id": 108,
+          "name": "Ingredient 108",
+          "amount": 3.6403890715990754,
+          "unit": "cup",
+          "image": "https://example.com/ingredient108.jpg"
+        }
+      ],
+      "readyInMinutes": 14,
+      "vegan": false,
+      "vegetarian": false,
+      "glutenFree": true,
+      "servings": 4
+    }
+  ]
+]
+
+
+com.cb.recipe.service.RecipeServiceTest.givenCachedRecipeId_whenGetAnalyzedRecipeInstructions_thenExpectCachedInstructions=[
+  [
+    {
+      "name": "Instruction Set 88",
+      "steps": [
+        {
+          "number": 1,
+          "step": "Step description 4",
+          "equipment": [ ],
+          "ingredients": [ ]
+        },
+        {
+          "number": 2,
+          "step": "Step description 7",
+          "length": {
+            "number": 21.611449199578143,
+            "unit": "minutes"
+          },
+          "equipment": [ ],
+          "ingredients": [
+            "Ingredient 64",
+            "Ingredient 63"
+          ]
+        },
+        {
+          "number": 3,
+          "step": "Step description 5",
+          "length": {
+            "number": 27.41756394766841,
+            "unit": "minutes"
+          },
+          "equipment": [ ],
+          "ingredients": [ ]
+        },
+        {
+          "number": 4,
+          "step": "Step description 3",
+          "equipment": [ ],
+          "ingredients": [ ]
+        },
+        {
+          "number": 5,
+          "step": "Step description 10",
+          "length": {
+            "number": 26.069426661179147,
+            "unit": "minutes"
+          },
+          "equipment": [
+            {
+              "name": "Equipment 5",
+              "temperature": {
+                "number": 215.989270869342,
+                "unit": "Fahrenheit"
+              }
+            }
+          ],
+          "ingredients": [ ]
+        },
+        {
+          "number": 6,
+          "step": "Step description 6",
+          "equipment": [
+            {
+              "name": "Equipment 75",
+              "temperature": {
+                "number": 219.49479796024917,
+                "unit": "Fahrenheit"
+              }
+            }
+          ],
+          "ingredients": [
+            "Ingredient 38",
+            "Ingredient 78"
+          ]
+        }
+      ]
+    }
+  ]
+]
+
+
+com.cb.recipe.service.RecipeServiceTest.givenValidIngredients_whenGetRecipes_thenExpectNonCachedRecipes=[
+  [
+    {
+      "id": 985,
+      "title": "Recipe 985",
+      "image": "https://example.com/recipe985.jpg",
+      "imageType": "jpg",
+      "likes": 88,
+      "missedIngredientCount": 2,
+      "missedIngredients": [
+        {
+          "id": 313,
+          "name": "Ingredient 313",
+          "amount": 1.3261184393533094,
+          "unit": "unit",
+          "image": "https://example.com/ingredient313.jpg"
+        },
+        {
+          "id": 606,
+          "name": "Ingredient 606",
+          "amount": 7.3966566481449405,
+          "unit": "unit",
+          "image": "https://example.com/ingredient606.jpg"
+        }
+      ],
+      "usedIngredientCount": 3,
+      "usedIngredients": [
+        {
+          "id": 317,
+          "name": "Ingredient 317",
+          "amount": 9.458788499037189,
+          "unit": "unit",
+          "image": "https://example.com/ingredient317.jpg"
+        },
+        {
+          "id": 592,
+          "name": "Ingredient 592",
+          "amount": 9.433739340063727,
+          "unit": "unit",
+          "image": "https://example.com/ingredient592.jpg"
+        },
+        {
+          "id": 376,
+          "name": "Ingredient 376",
+          "amount": 4.127662262827992,
+          "unit": "unit",
+          "image": "https://example.com/ingredient376.jpg"
+        }
+      ],
+      "readyInMinutes": 0,
+      "vegan": false,
+      "vegetarian": false,
+      "glutenFree": false,
+      "servings": 0
+    }
+  ]
+]
+
+
+com.cb.recipe.service.RecipeServiceTest.givenValidRecipeIds_whenGetRecipeInformationBulk_thenExpectBulkOfRecipeInformation=[
+  [
+    {
+      "id": 8985,
+      "servings": 5,
+      "readyInMinutes": 48,
+      "cookingMinutes": 0,
+      "preparationMinutes": 0,
+      "healthScore": 0.0,
+      "spoonacularScore": 0.0,
+      "pricePerServing": 0.0,
+      "cheap": false,
+      "dairyFree": false,
+      "glutenFree": false,
+      "ketogenic": false,
+      "lowFodmap": false,
+      "sustainable": false,
+      "vegan": false,
+      "vegetarian": false,
+      "veryHealthy": false,
+      "veryPopular": false,
+      "whole30": false,
+      "weightWatcherSmartPoints": 0
+    },
+    {
+      "id": 6108,
+      "servings": 1,
+      "readyInMinutes": 32,
+      "cookingMinutes": 0,
+      "preparationMinutes": 0,
+      "healthScore": 0.0,
+      "spoonacularScore": 0.0,
+      "pricePerServing": 0.0,
+      "cheap": false,
+      "dairyFree": false,
+      "glutenFree": false,
+      "ketogenic": false,
+      "lowFodmap": false,
+      "sustainable": false,
+      "vegan": true,
+      "vegetarian": false,
+      "veryHealthy": false,
+      "veryPopular": false,
+      "whole30": false,
+      "weightWatcherSmartPoints": 0
+    },
+    {
+      "id": 3734,
+      "servings": 3,
+      "readyInMinutes": 20,
+      "cookingMinutes": 0,
+      "preparationMinutes": 0,
+      "healthScore": 0.0,
+      "spoonacularScore": 0.0,
+      "pricePerServing": 0.0,
+      "cheap": false,
+      "dairyFree": false,
+      "glutenFree": false,
+      "ketogenic": false,
+      "lowFodmap": false,
+      "sustainable": false,
+      "vegan": false,
+      "vegetarian": true,
+      "veryHealthy": false,
+      "veryPopular": false,
+      "whole30": false,
+      "weightWatcherSmartPoints": 0
+    }
+  ]
+]

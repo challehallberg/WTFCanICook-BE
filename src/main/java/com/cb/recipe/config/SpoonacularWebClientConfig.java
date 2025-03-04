@@ -1,6 +1,7 @@
 package com.cb.recipe.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,7 @@ public class SpoonacularWebClientConfig {
     private String apiKey;
 
     @Bean
+    @Qualifier("spoonacularWebClient")
     public WebClient spoonacularWebClient() {
         return WebClient.builder()
                 .baseUrl("https://api.spoonacular.com")

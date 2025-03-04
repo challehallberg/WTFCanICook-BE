@@ -1,6 +1,6 @@
 package com.cb.recipe.mapper;
 
-import com.cb.recipe.model.Recipe;
+import com.cb.recipe.model.recipe.Recipe;
 import com.cb.recipe.model.spoonacular.recipe.RecipeInner;
 
 import java.math.BigDecimal;

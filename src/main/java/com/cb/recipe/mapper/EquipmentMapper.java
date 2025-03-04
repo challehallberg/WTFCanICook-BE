@@ -1,8 +1,8 @@
 package com.cb.recipe.mapper;
 
 import com.cb.recipe.model.spoonacular.instruction.EquipmentInner;
-import com.cb.recipe.model.Equipment;
-import com.cb.recipe.model.Temperature;
+import com.cb.recipe.model.instruction.Equipment;
+import com.cb.recipe.model.instruction.Temperature;
 
 public class EquipmentMapper {
     public static Equipment map(final EquipmentInner equipmentInner) {

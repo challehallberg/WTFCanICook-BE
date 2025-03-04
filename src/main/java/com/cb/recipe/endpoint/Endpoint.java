@@ -1,7 +1,7 @@
 package com.cb.recipe.endpoint;
 
 import com.cb.recipe.handler.RecipeHandler;
-import com.cb.recipe.model.Recipe;
+import com.cb.recipe.model.recipe.Recipe;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -28,7 +28,7 @@ public class Endpoint {
         if (files == null) {
             return ResponseEntity.badRequest().body("File is empty");
         }
-        List<Recipe> recipes = recipeHandler.getRecipes(files);
+        final List<Recipe> recipes = recipeHandler.getRecipes(files);
 
         return ResponseEntity.ok(recipes);
     }

@@ -1,7 +1,7 @@
 package com.cb.recipe.handler;
 
-import com.cb.recipe.model.Instruction;
-import com.cb.recipe.model.Recipe;
+import com.cb.recipe.model.instruction.Instruction;
+import com.cb.recipe.model.recipe.Recipe;
 import com.cb.recipe.model.spoonacular.recipeInformation.RecipeInformationInner;
 import com.cb.recipe.service.OpenAiService;
 import com.cb.recipe.service.RecipeService;
@@ -32,6 +32,7 @@ public class RecipeHandler {
 
         final String ingredients = Arrays.stream(files)
                 .map(openAiService::processImage)
+                .filter(s -> s != null && !s.isEmpty())
                 .collect(Collectors.joining(", "));
 
         if(ingredients.isEmpty()){

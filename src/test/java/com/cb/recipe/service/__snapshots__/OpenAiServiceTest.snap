@@ -1,0 +1,8 @@
+com.cb.recipe.service.OpenAiServiceTest.givenValidFileInCache_whenProcessImage_thenExpectedResultFromCache=[
+  "apple, banana, tomato"
+]
+
+
+com.cb.recipe.service.OpenAiServiceTest.givenValidFileWithNoCacheHit_whenProcessImage_thenExpectedResult=[
+  "apple, banana, tomato, (it might be Harald's fault)"
+]

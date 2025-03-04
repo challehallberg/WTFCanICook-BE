@@ -1,4 +1,4 @@
-package com.cb.recipe.model;
+package com.cb.recipe.model.recipe;
 import lombok.Builder;
 import lombok.Data;
 

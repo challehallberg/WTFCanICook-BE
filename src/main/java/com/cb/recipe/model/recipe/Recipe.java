@@ -1,4 +1,4 @@
-package com.cb.recipe.model;
+package com.cb.recipe.model.recipe;
 
 import lombok.Builder;
 import lombok.Data;
@@ -26,6 +26,4 @@ public class Recipe {
     private boolean vegetarian;
     private boolean glutenFree;
     private int servings;
-
-    //private List<Instruction> instructionSteps;
 }

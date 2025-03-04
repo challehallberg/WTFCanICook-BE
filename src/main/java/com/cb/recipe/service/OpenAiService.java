@@ -4,25 +4,24 @@ import com.cb.recipe.client.OpenAiClient;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.Caffeine;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Base64;
-import java.util.concurrent.TimeUnit;
 
 @Service
 @Slf4j
 public class OpenAiService {
     private final OpenAiClient client;
-    private final Cache<String, String> imageResponseCache = Caffeine.newBuilder()
-            .expireAfterWrite(10, TimeUnit.MINUTES)
-            .build();
+    private final Cache<String, String> imageResponseCache;
 
-    public OpenAiService(final OpenAiClient client) {
+    public OpenAiService(final OpenAiClient client,
+                         @Qualifier("imageResponseCache") Cache<String, String> imageResponseCache) {
         this.client = client;
+        this.imageResponseCache = imageResponseCache;
     }
 
     public String processImage(final MultipartFile file) {
@@ -57,7 +56,7 @@ public class OpenAiService {
 
             return rootNode
                     .path("choices")     // Navigate to "choices"
-                    .get(0)                 // Get the first choice
+                    .get(0)              // Get the first choice
                     .path("message")     // Navigate to "message"
                     .path("content")     // Extract "content"
                     .asText();

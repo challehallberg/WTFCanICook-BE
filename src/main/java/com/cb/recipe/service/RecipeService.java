@@ -3,34 +3,32 @@ package com.cb.recipe.service;
 import com.cb.recipe.client.SpoonacularClient;
 import com.cb.recipe.mapper.InstructionMapper;
 import com.cb.recipe.mapper.RecipeMapper;
-import com.cb.recipe.model.Instruction;
-import com.cb.recipe.model.Recipe;
+import com.cb.recipe.model.instruction.Instruction;
+import com.cb.recipe.model.recipe.Recipe;
 import com.cb.recipe.model.spoonacular.instruction.InstructionInner;
 import com.cb.recipe.model.spoonacular.recipe.RecipeInner;
 import com.cb.recipe.model.spoonacular.recipeInformation.RecipeInformationInner;
 import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.Caffeine;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Service
 @Slf4j
 public class RecipeService {
     private final SpoonacularClient client;
-    private final Cache<String, List<Recipe>> recipeCache = Caffeine.newBuilder()
-            .expireAfterWrite(10, TimeUnit.MINUTES)
-            .build();
+    private final Cache<String, List<Recipe>> recipeCache;
+    private final Cache<Integer, List<Instruction>> instructionsCache;
 
-    private final Cache<Integer, List<Instruction>> instructionsCache = Caffeine.newBuilder()
-            .expireAfterWrite(10, TimeUnit.MINUTES)
-            .build();
-
-    public RecipeService(final SpoonacularClient client) {
+    public RecipeService(final SpoonacularClient client,
+                         @Qualifier("recipeCache") final Cache<String, List<Recipe>> recipeCache,
+                         @Qualifier("instructionsCache") final Cache<Integer, List<Instruction>> instructionsCache) {
         this.client = client;
+        this.recipeCache = recipeCache;
+        this.instructionsCache = instructionsCache;
     }
 
     public List<Recipe> getRecipe(final String ingredients) {
